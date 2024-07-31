@@ -35,16 +35,26 @@ class _HomescreenState extends State<Homescreen>
           SizedBox(height: 20),
           ElevatedButton(
               onPressed: (){
-                //box.put("name", titleController.text);
-                box.put("note", {
-                  "title" : "my title",
-                  "desc" : "note des",
-                  "date" : "note date",
-                  "color" : 5
-                });
+                // Adding
+               // box.add(titleController.text);
+                //Editing
+                box.put(0,"sar");
+                //Delete
+                box.delete(1);
                 setState(() {
 
                 });
+               // box.clear();
+                //box.put("name", titleController.text);
+                // box.put("note", {
+                //   "title" : "my title",
+                //   "desc" : "note des",
+                //   "date" : "note date",
+                //   "color" : 5
+                // });
+                // setState(() {
+                //
+                // });
               },
               child: Text("Save", )),
           SizedBox(height: 20),
@@ -55,11 +65,13 @@ class _HomescreenState extends State<Homescreen>
               },
               child: Text("Get", )),
           SizedBox(height: 20),
+          Text(box.values.toString()), // box.values means aa boxine akath enthoke values store cheythinde ayine edukum
+          Text(box.keys.toString())
           //Text(box.get("name") ?? "empty")
-          Text(box.get("note")["title"]),
-          Text(box.get("note")["desc"]),
-          Text(box.get("note")["date"]),
-          Text(box.get("note")["color"].toString())
+          // Text(box.get("note")["title"]),
+          // Text(box.get("note")["desc"]),
+          // Text(box.get("note")["date"]),
+          // Text(box.get("note")["color"].toString())
         ],
       ),
     );
